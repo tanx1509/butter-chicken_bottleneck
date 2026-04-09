@@ -1,0 +1,35 @@
+{
+  "Aspect": [
+    "Simulator built",
+    "Capacity drop modeled",
+    "Rule-based meter",
+    "RL agent trained",
+    "Learning curve",
+    "Held-out evaluation",
+    "Headline throughput gain",
+    "Headline waiting time gain",
+    "Seeds validated on"
+  ],
+  "April 8 preliminary": [
+    "Yes (250 line CA simulator)",
+    "No",
+    "Yes (density-aware soft meter)",
+    "No (design only)",
+    "Not applicable",
+    "5 seeds",
+    "+3.3% (fragile across seeds)",
+    "-2.1%",
+    "5"
+  ],
+  "April 10 final": [
+    "Yes (same base, capacity drop added)",
+    "Yes (15 to 30 percent capacity loss at critical density)",
+    "Yes (improved, preemptive throttling)",
+    "Yes (PPO, 150k timesteps, SB3)",
+    "Yes (30 eval checkpoints during training)",
+    "15 seeds",
+    "+36.6% (robust across seeds)",
+    "-14.2%",
+    "15"
+  ]
+}
