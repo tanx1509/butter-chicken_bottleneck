@@ -100,9 +100,19 @@ All three controllers (baseline, rule-based, PPO) are evaluated on the same 15 f
 
 **This is a simulator, not a real traffic system.** The capacity drop coefficients and the merge urgency model are tuned to produce a meaningful control problem. The relative improvement between controllers is meaningful; the absolute numbers are specific to this simulator.
 
-## Comparison to the April 8 preliminary submission
+## Live interactive visualization
 
-On April 8 we submitted a design document with a working simulator and a rule-based meter showing +3.3 percent throughput improvement on 5 seeds. The April 10 final adds:
+**[▶ Watch it run: butterchicken-bottleneck.netlify.app](https://butterchicken-bottleneck.netlify.app)**
+
+Three controllers running side by side on the same random seed: baseline, rule-based meter, and the trained PPO agent. Live throughput counters, the capacity drop region marked in red, and a rotating narrative panel explaining what is happening and why.
+
+Watch the PPO row. It holds vehicles upstream in disciplined clusters and releases them in platoons. That is bang-bang control, which the agent discovered on its own during training. The baseline row is pure gridlock. The rule-based row sits in between.
+
+The animation runs entirely in the browser. No install, no dependencies, no API calls. Everything is inlined in a single HTML file (`visualization.html` in this repo).
+
+## Comparison to the preliminary submission
+
+Earlier, we submitted a design document with a working simulator and a rule-based meter showing +3.3 percent throughput improvement on 5 seeds. Now, we add:
 
 1. The capacity drop mechanic (the bottleneck now loses 15 to 30 percent of capacity when congested, reproducing the real-world phenomenon)
 2. A trained PPO agent with a clean learning curve on 30 held-out eval points
